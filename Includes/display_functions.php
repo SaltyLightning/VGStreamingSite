@@ -14,8 +14,11 @@ function generateVideoWell(array $videos){
     foreach ($videos as $video){
         echo '<div class="col-md-3" >';
         echo '<div class="thumbnail" >';
-        echo '<img src = "'. $video->getThumbnail() . '" title = "' . $video->getTitle . '/>';
+        echo '<img src = "'. $video->getThumbnail() . '" title = "' . $video->getTitle() . '/>';
         echo '<div class="caption" >';
+        echo '<p>' . $video->getTitle() . '</p>';
+        echo '<p>' . $video->getUploader() . '</p>';
+        echo '</div></div>';
     }
     echo '</div>';
 }
