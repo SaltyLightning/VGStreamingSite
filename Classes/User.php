@@ -10,7 +10,6 @@ class User
 {
     private $_username;
     private $_email;
-    private $_hash;
 
     /**
      * @return mixed
