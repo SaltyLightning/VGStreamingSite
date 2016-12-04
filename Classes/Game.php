@@ -45,4 +45,28 @@ class Game
         return $this->_gameId;
     }
 
+    /**
+     * Video constructor.
+     */
+    public function __construct($gameID = false)
+    {
+        if ($gameID != false) {
+            $sql = "SELECT * FROM games WHERE GameID = $gameID";
+            $con = mysqli_connect("localhost", "cs", "", "cs3500");
+
+            if (mysqli_connect_errno($con)) {
+
+            } else {
+                $result = mysqli_query($con, $sql);
+                $arr = mysqli_fetch_array($result);
+                $this->_gameTitle = $arr["GameTitle"];
+                $this->_thumbnail = $arr["Thumbnail"];
+                $this->_releaseDate = $arr["ReleaseDate"];
+                $this->_gameID = $arr["GameID"];
+            }
+        }
+    }
+
+
+
 }

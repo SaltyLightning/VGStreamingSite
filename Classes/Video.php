@@ -72,4 +72,120 @@ class Video
         return $this->_videoID;
     }
 
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->_title = $title;
+    }
+
+    /**
+     * @param mixed $video_url
+     */
+    public function setVideoUrl($video_url)
+    {
+        $this->_video_url = $video_url;
+    }
+
+    /**
+     * @param mixed $thumbnail
+     */
+    public function setThumbnail($thumbnail)
+    {
+        $this->_thumbnail = $thumbnail;
+    }
+
+    /**
+     * @param mixed $video_length
+     */
+    public function setVideoLength($video_length)
+    {
+        $this->_video_length = $video_length;
+    }
+
+    /**
+     * @param mixed $uploader
+     */
+    public function setUploader($uploader)
+    {
+        $this->_uploader = $uploader;
+    }
+
+    /**
+     * @param mixed $gameID
+     */
+    public function setGameID($gameID)
+    {
+        $this->_gameID = $gameID;
+    }
+
+    /**
+     * Video constructor.
+     */
+    public function __construct($videoID = false)
+    {
+        if ($videoID != false) {
+            $sql = "SELECT * FROM vides WHERE VideoID = $videoID";
+            $con = mysqli_connect("localhost", "cs", "", "cs3500");
+
+            if (mysqli_connect_errno($con)) {
+
+            } else {
+                $result = mysqli_query($con, $sql);
+                $arr = mysqli_fetch_array($result);
+                $this->_title = $arr["Title"];
+                $this->_thumbnail = $arr["Thumbnail"];
+                $this->_uploader = $arr["Uploader"];
+                $this->_gameID = $arr["GameID"];
+                $this->_videoID = $arr["VideoID"];
+            }
+        }
+    }
+
+    public function isUploaded(){
+        $sql = "SELECT * FROM Videos WHERE VideoID = " . $this->_videoID;
+        $con = mysqli_connect("localhost", "cs", "", "cs3500");
+
+        if (mysqli_connect_errno($con)) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
+    public function uploadVideo(){
+        $sql = "INSERT INTO videos (VideoName, Thumbnail, VideoURL, VideoLength, Uploader, GameID)";
+        $sql .= sprintf("VALUES (%s, %s, %s, %s, %s, %s)", $this->_title, $this->_thumbnail, $this->_video_url, $this->_video_length, $this->_uploader, $this->_gameID);
+        $con = mysqli_connect("localhost", "cs", "", "cs3500");
+
+        if (mysqli_connect_errno($con)){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+
+    public function updateVideoDetails(){
+        if ($this->isUploaded()){
+            $sql = sprintf("UPDATE videos SET VideoName=%s, Thumbnail=%s, VideoURL=%s, VideoLength=%s, Uploader=%s, GameID=%s where VideoID = %s",
+                $this->_title, $this->_thumbnail, $this->_video_url, $this->_video_length, $this->_uploader, $this->_gameID);
+            $con = mysqli_connect("localhost", "cs", "", "cs3500");
+            if (mysqli_connect_errno($con)){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    }
+
+
+
+
+
+
 }
