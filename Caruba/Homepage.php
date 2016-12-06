@@ -21,5 +21,28 @@
   </head>
 
   <body>
+  	<!-- Here's the topbar -->
+  	<div class="topnav">
+	  	<ul>
+	  		<li><a href="#home">Home</a></li>
+	  		<li><a href="#news">News</a></li>
+	  		<li><a href="#contact">Contact</a></li>
+	  		<li><a href="#about">About</a></li>
+		</ul>
+
+		<div class="search">
+			SEARCH
+		</div>
+	</div>
+
+	<!-- Aaand here's the sidebar -->
+	<div class="sidenav">
+		<ul>
+	  		<li><a href="#home">*</a></li>
+	  		<li><a href="#news">*</a></li>
+	  		<li><a href="#contact">*</a></li>
+	  		<li><a href="#about">*</a></li>
+		</ul>
+	</div>
   </body>
 </html>
