@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: searchbar;
-	src: url(fonts/Roboto-Bold.ttf);
+	src: url(fonts/Roboto-Light.ttf);
 }
 
 @font-face {
@@ -40,6 +40,8 @@ div.topnav {
 }
 
 div.logo {
+    position: absolute;
+    top: 5px; left: 5px;
     display: inline-block;
 }
 

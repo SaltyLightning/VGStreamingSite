@@ -4,8 +4,8 @@
 
 <!-- Here's the topbar -->
 <div class="topnav">
-	<div style="display: inline-block">
-		<a href="homepage.php"><img src="images/logos/logo-2.png" width="60" height="60"></a>
+	<div style="display: inline-block" class="logo">
+		<a href="homepage.php"><img src="images/logos/logo-2.png" width="55" height="55"></a>
 	</div>
 	
 	<div style="display: inline-block" id="title">CARUBA</div>
