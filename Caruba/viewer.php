@@ -1,5 +1,6 @@
 <?php
-
+    include_once "../Classes/Video.php";
+    $video = new Video($_GET["video"]);
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video</title>
+    <title><?php echo $video->getTitle()?></title>
    
     <!-- Reset everything -->
     <link href="reset.css" rel="stylesheet">
@@ -25,7 +26,7 @@
   	<?php include 'includes/base.php'; ?>
 
     <div class="video">
-      Stuff goes here
+
     </div>
   </body>
 </html>

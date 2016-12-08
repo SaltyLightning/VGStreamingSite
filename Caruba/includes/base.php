@@ -2,6 +2,9 @@
 
 <link href="base_styling.php" type="text/css" rel="stylesheet">
 
+<!-- Styling for video well -->
+<link href="includes/video_styling.css" rel="stylesheet">
+
 <!-- Here's the topbar -->
 <div class="topnav">
 	<div style="display: inline-block" class="logo">
@@ -29,7 +32,7 @@
 
 	<div class="search">
 		<!-- SEARCH &nbsp; -->
-		<form action="" method="GET">
+		<form action="search-results.php" method="POST">
 			<input type="text" name="query" value=" Search" onfocus="if (this.value==' Search') this.value='';"/>
 			<input type="submit"/>
 		</form>
@@ -39,7 +42,7 @@
 <!-- Aaand here's the sidebar -->
 <div class="sidenav">
 	<ul>
-		<li><a href="#games"><img class="top" src="images/icons/gamepad.png"></a></li>
+		<li><a href="games.php"><img class="top" src="images/icons/gamepad.png" title="Games"></a></li>
 		<li><a href="#channels"><img src="images/icons/users.png"></a></li>
 		<li><a href="#favorites"><img src="images/icons/favorite.png"></a></li>
 		<li><a href="#settings"><img src="images/icons/share.png"></a></li>

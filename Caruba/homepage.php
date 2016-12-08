@@ -1,5 +1,5 @@
 <?php
-
+    include_once 'includes/display_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +21,13 @@
 
   </head>
 
-  <body>
-  	<?php include 'includes/base.php'; ?>
+<body>
+    <?php include 'includes/base.php'; ?>
 
     <div class="display">
-      Stuff goes here
+        <?php
+            generateVideoWell(getVideosFromQuery(""));
+        ?>
     </div>
   </body>
 </html>

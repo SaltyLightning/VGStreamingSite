@@ -126,26 +126,35 @@ class Video
     public function __construct($videoID = false)
     {
         if ($videoID != false) {
-            $sql = "SELECT * FROM vides WHERE VideoID = $videoID";
-            $con = mysqli_connect("localhost", "cs", "", "cs3500");
+            $sql = "SELECT * FROM videos WHERE VideoID = $videoID";
+            $con = mysqli_connect("localhost", "cs", "", "videogamestreaming");
 
             if (mysqli_connect_errno($con)) {
 
             } else {
                 $result = mysqli_query($con, $sql);
-                $arr = mysqli_fetch_array($result);
-                $this->_title = $arr["Title"];
-                $this->_thumbnail = $arr["Thumbnail"];
-                $this->_uploader = $arr["Uploader"];
-                $this->_gameID = $arr["GameID"];
-                $this->_videoID = $arr["VideoID"];
+                if (!$result)
+                {
+                    echo "<p>sql = $sql. Result = " . mysqli_error($con) . "</p>";
+                }
+                else
+                {
+                    $arr = mysqli_fetch_array($result);
+                    $result_t = get_class($result);
+
+                    $this->_title = $arr["VideoName"];
+                    $this->_thumbnail = $arr["Thumbnail"];
+                    $this->_uploader = $arr["Uploader"];
+                    $this->_gameID = $arr["GameID"];
+                    $this->_videoID = $arr["VideoID"];
+                }
             }
         }
     }
 
     public function isUploaded(){
         $sql = "SELECT * FROM Videos WHERE VideoID = " . $this->_videoID;
-        $con = mysqli_connect("localhost", "cs", "", "cs3500");
+        $con = mysqli_connect("localhost", "cs", "", "videogamestreaming");
 
         if (mysqli_connect_errno($con)) {
             return false;
@@ -158,7 +167,7 @@ class Video
     public function uploadVideo(){
         $sql = "INSERT INTO videos (VideoName, Thumbnail, VideoURL, VideoLength, Uploader, GameID)";
         $sql .= sprintf("VALUES (%s, %s, %s, %s, %s, %s)", $this->_title, $this->_thumbnail, $this->_video_url, $this->_video_length, $this->_uploader, $this->_gameID);
-        $con = mysqli_connect("localhost", "cs", "", "cs3500");
+        $con = mysqli_connect("localhost", "cs", "", "videogamestreaming");
 
         if (mysqli_connect_errno($con)){
             return false;
@@ -173,7 +182,7 @@ class Video
         if ($this->isUploaded()){
             $sql = sprintf("UPDATE videos SET VideoName=%s, Thumbnail=%s, VideoURL=%s, VideoLength=%s, Uploader=%s, GameID=%s where VideoID = %s",
                 $this->_title, $this->_thumbnail, $this->_video_url, $this->_video_length, $this->_uploader, $this->_gameID);
-            $con = mysqli_connect("localhost", "cs", "", "cs3500");
+            $con = mysqli_connect("localhost", "cs", "", "videogamestreaming");
             if (mysqli_connect_errno($con)){
                 return false;
             }

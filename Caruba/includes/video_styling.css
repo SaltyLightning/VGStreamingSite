@@ -1,0 +1,44 @@
+@font-face {
+    font-family: thumbnail;
+    src: url(fonts/roboto.ttf);
+}
+div.video-tiny{
+    height: 14em;
+    width: 16em;
+    margin: 2em;
+    background: rgb(0,40,50);
+    font-family: thumbnail, Calibri, sans-serif;
+    color: white;
+    padding-top: 0.5em;
+}
+
+
+div.game-tiny{
+    height: 25em;
+    width: 16em;
+    margin: 2em;
+    background: rgb(0,40,50);
+    font-family: thumbnail, Calibri, sans-serif;
+    color: white;
+    padding-top: 0.5em;
+}
+
+div.video-well{
+    margin: 2em;
+}
+
+img.v-thumb{
+    max-width:100%;
+    max-height:100%;
+    /*width: 2em;*/
+    /*height: 2em;*/
+}
+
+img.g-thumb{
+    width: 100%;
+    height: 60%;
+}
+
+.caption{
+    font-size: 1.5em;
+}

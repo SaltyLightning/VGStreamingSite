@@ -181,3 +181,26 @@ div.sidenav ul li {
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 div.sidenav ul li.icon {display: none;}
+
+.display {
+height: auto;
+width: 	1735px;
+
+position: absolute;
+top: 120px;
+left: 120px; right: 60px; right: 0; bottom: 0;
+
+background: rgba(0,0,0,0.5);
+color: white;
+
+<!--height: 770px;-->
+<!--width: 	1735px;-->
+<!---->
+<!--position: absolute;-->
+<!--top: 120px;-->
+<!--left: 120px; right: 60px; right: 0; bottom: 0;-->
+<!---->
+<!--background: rgba(0,0,0,0.5);-->
+<!---->
+<!--color: white;-->
+}

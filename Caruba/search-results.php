@@ -1,5 +1,5 @@
 <?php
-
+    include_once 'includes/display_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +16,32 @@
     <link href="bootstrap3_defaultTheme/dist/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap3_defaultTheme/theme.css" rel="stylesheet">
 
+
   </head>
 
   <body>
-  	<?php include 'includes/base.php'; ?>
-
+  	<?php
+    include 'includes/base.php';
+    ?>
     <div class="display">
-      Stuff goes here
+        <?php
+        $search_query ="";
+        if (isset($_POST["query"])){
+            $search_query = $_POST["query"];
+        }
+        else
+        {
+            if (isset($_GET["query"])){
+                $search_query = $_GET["query"];
+            }
+        }
+        $videos = getVideosFromQuery($search_query);
+        if (empty($videos))
+            echo "<p>no search results found</p>";
+        else
+            generateVideoWell($videos);
+        ?>
     </div>
+
   </body>
 </html>

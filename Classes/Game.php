@@ -52,7 +52,7 @@ class Game
     {
         if ($gameID != false) {
             $sql = "SELECT * FROM games WHERE GameID = $gameID";
-            $con = mysqli_connect("localhost", "cs", "", "cs3500");
+            $con = mysqli_connect("localhost", "cs", "", "videogamestreaming");
 
             if (mysqli_connect_errno($con)) {
 
