@@ -87,7 +87,7 @@ input[type="text"]:focus {
 
 div.search {
 	position: absolute;
-    right: 100px;
+    right: 50px;
     top: 15px;
 
     color: white;
@@ -105,6 +105,7 @@ div.search input[type="text"] {
 	border:0 none;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    width: 500px;
 }
 
 /*Sidebar starts here***********************************/
@@ -134,20 +135,20 @@ input[type=submit] {
 /* Float the list items side by side */
 div.sidenav ul li {
 	font-family: navbar, Calibri, sans-serif;
+    display:    inline-block;
+    color:      white;
+    text-align: center;
+    margin-top:     25px;
+    margin-left:    17px;
+    /*padding:  5px 25px; Will reposition icons*/
+    text-decoration: none;
+    transition: 0.3s;
+    font-size:  24px;
 }
 
 /* Style the links inside the list items */
-div.sidenav ul li a {
-    display:	inline-block;
-    color:		white;
-    text-align:	center;
-    margin-top:		25px;
-    margin-left:	20px;
-    /*padding:	5px 25px; Will reposition icons*/
-    text-decoration: none;
-    transition:	0.3s;
-    font-size:	24px;
-}
+.top {margin-top: 40px;}
+
 
 /* Change background color of links on hover */
 div.sidenav ul li a:hover {background-color: #555;}
