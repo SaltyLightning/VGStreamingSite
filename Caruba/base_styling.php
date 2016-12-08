@@ -34,8 +34,22 @@ body {
 div.topnav {
 	background-color: rgb(0,40,50);
 
+    position: absolute;
+    left: 0; right: 0;
 	height: 60px;
-	/*width:	100%;*/
+}
+
+div.logo {
+    display: inline-block;
+}
+
+div.profile {
+    position: absolute;
+    right: 100px;
+    top: 15px;
+
+    color: white;
+    margin-left: 15px;
 }
 
 /* Remove margins and padding from the list, and add a black background color */
@@ -68,9 +82,6 @@ div.topnav ul li a {
     font-size:		24px;
 }
 
-/* Change background color of links on hover */
-div.topnav ul li a:hover {background-color: #555;}
-
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 div.topnav ul li.icon {display: none;}
 
@@ -87,7 +98,7 @@ input[type="text"]:focus {
 
 div.search {
 	position: absolute;
-    right: 50px;
+    left: 150px;
     top: 15px;
 
     color: white;
@@ -112,7 +123,8 @@ div.search input[type="text"] {
 div.sidenav {
 	background-color: rgb(0,40,50);
 
-	height:	100%;
+	position: absolute;
+    left: 0; top: 60px; bottom: 0;
 	width:	60px;
 }
 
@@ -148,10 +160,6 @@ div.sidenav ul li {
 
 /* Style the links inside the list items */
 .top {margin-top: 40px;}
-
-
-/* Change background color of links on hover */
-div.sidenav ul li a:hover {background-color: #555;}
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 div.sidenav ul li.icon {display: none;}

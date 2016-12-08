@@ -16,10 +16,16 @@
     <link href="bootstrap3_defaultTheme/dist/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap3_defaultTheme/theme.css" rel="stylesheet">
 
+    <!-- Include styling -->
+    <link href="homepage-styling.css" rel="stylesheet">
+
   </head>
 
   <body>
   	<?php include 'includes/base.php'; ?>
 
+    <div class="display">
+      Stuff goes here
+    </div>
   </body>
 </html>
