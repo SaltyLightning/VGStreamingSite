@@ -1,5 +1,6 @@
 <!-- Get my stylesheet included -->
-<link href="base_styling.css" rel="stylesheet">
+
+<link href="base_styling.php" rel="stylesheet" type="text/css">
 
 <!-- Here's the topbar -->
 <div class="topnav">
