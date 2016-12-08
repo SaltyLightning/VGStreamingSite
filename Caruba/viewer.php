@@ -1,5 +1,6 @@
 <?php
     include_once "../Classes/Video.php";
+    include_once "includes/display_functions.php";
     $video = new Video($_GET["video"]);
 ?>
 
@@ -26,7 +27,13 @@
   	<?php include 'includes/base.php'; ?>
 
     <div class="video">
-
+        <h2 class="video"><?php echo $video->getTitle() ?></h2>
+        <h4 class="video">More videos from <?php echo $video->getUploader() ?></h4>
+<!--        <img src="images/play.png" id="playerImage" />-->
+        <?php
+            $relatedVideos = getVideosFromQuery($video->getUploader());
+            generateVideoWell($relatedVideos);
+        ?>
     </div>
   </body>
 </html>

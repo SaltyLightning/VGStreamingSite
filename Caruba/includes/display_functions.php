@@ -21,7 +21,7 @@ function generateVideoWell(array $videos){
         echo sprintf('<a href="viewer.php?video=%s"><img src="images/Thumbnails/%s.png" title = "%s" class="v-thumb"/></a>', $video->getVideoID(), $video->getThumbnail(), $video->getTitle());
         echo '</div>';
         echo '<div class="caption" >';
-        echo '<p><a href="viewer.php?video=' . $video->getVideoID() .  '">' . $video->getTitle() . '</a>';
+        echo '<p><a href="viewer.php?video=' . $video->getVideoID() .  '">' . $video->getTitle() . '</a><br/>';
         echo ' by <a href="search-results.php?query=' . $video->getUploader() . '">'. $video->getUploader() . '</a></p>';
         echo '</div></div>';
     }

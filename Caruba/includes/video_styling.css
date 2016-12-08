@@ -3,17 +3,22 @@
     src: url(fonts/roboto.ttf);
 }
 div.video-tiny{
+    border: rgb(68,199,242) solid thin;
     height: 14em;
     width: 16em;
     margin: 2em;
     background: rgb(0,40,50);
     font-family: thumbnail, Calibri, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: white;
-    padding-top: 0.5em;
+    padding: 0.5em;
 }
 
 
 div.game-tiny{
+    border: rgb(68,199,242) solid thin;
     height: 25em;
     width: 16em;
     margin: 2em;
@@ -29,7 +34,7 @@ div.video-well{
 
 img.v-thumb{
     max-width:100%;
-    max-height:100%;
+    max-height: 9em;
     /*width: 2em;*/
     /*height: 2em;*/
 }
@@ -41,4 +46,8 @@ img.g-thumb{
 
 .caption{
     font-size: 1.5em;
+}
+
+video{
+    text-align: center;
 }
