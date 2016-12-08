@@ -1,0 +1,11 @@
+.display {
+	height: 770px;
+	width: 	1735px;
+
+	position: absolute;
+	top: 120px;
+	left: 120px; right: 60px; right: 0; bottom: 0;
+
+	background: rgb(0,0,0);
+	color: white;
+}

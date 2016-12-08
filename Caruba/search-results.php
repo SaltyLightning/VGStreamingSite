@@ -21,5 +21,8 @@
   <body>
   	<?php include 'includes/base.php'; ?>
 
+    <div class="display">
+      Stuff goes here
+    </div>
   </body>
 </html>
