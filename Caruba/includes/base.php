@@ -34,10 +34,10 @@
 			<input type="submit"/>
 		</form>
 	</div>
-	</div>
+</div>
 
-	<!-- Aaand here's the sidebar -->
-	<div class="sidenav">
+<!-- Aaand here's the sidebar -->
+<div class="sidenav">
 	<ul>
 		<li><a href="#games"><img class="top" src="images/icons/gamepad.png"></a></li>
 		<li><a href="#channels"><img src="images/icons/users.png"></a></li>

@@ -11,7 +11,12 @@
 }
 
 html {
-	background: url(images/backgrounds/bg<?php echo rand(0,9);?>.jpg) no-repeat center center fixed; 
+	background: 
+    linear-gradient(
+      rgba(0,40,50,0.7), 
+      rgba(0,40,50,0.7)
+    ),
+    url(images/backgrounds/bg<?php echo rand(0,9);?>.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -26,17 +31,21 @@ body {
 	left:	0;
 	margin:	0;
 	
-	background: rgba(0,40,50,0.7);
+	background: rgba(0,40,50,0.7) center top no-repeat;
 	background-size: 100%;
+
 }
 
 /*Top bar starts here***********************************/
+
 div.topnav {
 	background-color: rgb(0,40,50);
 
-    position: absolute;
+    position: fixed;
     left: 0; right: 0;
 	height: 60px;
+
+    z-index: 1;
 }
 
 div.logo {
@@ -131,9 +140,11 @@ div.search input[type="text"] {
 div.sidenav {
 	background-color: rgb(0,40,50);
 
-	position: absolute;
+	position: fixed;
     left: 0; top: 60px; bottom: 0;
 	width:	60px;
+
+    z-index: 1;
 }
 
 /* Remove margins and padding from the list, and add a black background color */
