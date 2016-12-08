@@ -2,12 +2,12 @@
 
 @font-face {
 	font-family: searchbar;
-	src: url(fonts/roboto.ttf);
+	src: url(fonts/Roboto-Bold.ttf);
 }
 
 @font-face {
-	font-family: navbar;
-	src: url(fonts/squared-display.ttf);
+	font-family: title;
+	src: url(fonts/cocogoose.otf);
 }
 
 html {
@@ -43,10 +43,18 @@ div.logo {
     display: inline-block;
 }
 
+#title {
+    position: absolute;
+    left: 90px; top: -5px;
+
+    font-family: title, Calibri, sans-serif;
+    font-size: 40pt;
+    color: white;
+}
+
 div.profile {
     position: absolute;
-    right: 100px;
-    top: 15px;
+    right: 100px; top: 15px;
 
     color: white;
     margin-left: 15px;
@@ -65,8 +73,6 @@ div.topnav ul {
 /* Float the list items side by side */
 div.topnav ul li {
 	float: left;
-
-	font-family: navbar, Calibri, sans-serif;
 }
 
 /* Style the links inside the list items */
@@ -98,7 +104,7 @@ input[type="text"]:focus {
 
 div.search {
 	position: absolute;
-    left: 150px;
+    right: 50px;
     top: 15px;
 
     color: white;
@@ -146,7 +152,6 @@ input[type=submit] {
 
 /* Float the list items side by side */
 div.sidenav ul li {
-	font-family: navbar, Calibri, sans-serif;
     display:    inline-block;
     color:      white;
     text-align: center;
