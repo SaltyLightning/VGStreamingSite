@@ -2,6 +2,8 @@
     include_once "../Classes/Video.php";
     include_once "includes/display_functions.php";
     $video = new Video($_GET["video"]);
+    $relatedVideos = getVideosFromQuery($video->getUploader());
+
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +28,22 @@
   <body>
   	<?php include 'includes/base.php'; ?>
 
-    <div class="video">
-        <h2 class="video"><?php echo $video->getTitle() ?></h2>
-        <h4 class="video">More videos from <?php echo $video->getUploader() ?></h4>
-<!--        <img src="images/play.png" id="playerImage" />-->
-        <?php
-            $relatedVideos = getVideosFromQuery($video->getUploader());
-            generateVideoWell($relatedVideos);
-        ?>
+    <div class="video container-fluid">
+        <h2 class="video col-md-9 "><?php echo $video->getTitle() ?></h2>
+        <div class="player col-md-9">
+            <a href="#" class="player"></a>
+        </div>
+        <div class="col-md-3">
+            <?php if (count($relatedVideos) > 1){
+
+            echo '<h4 class="video">More videos from ' . $video->getUploader() . '</h4>';
+//    <!--        <img src="images/play.png" id="playerImage" />-->
+
+
+                generateVideoWell($relatedVideos, $video->getVideoID(), 2   );
+            }
+            ?>
+        </div>
     </div>
   </body>
 </html>

@@ -1,3 +1,8 @@
+@font-face {
+	font-family: title;
+	src: url(fonts/cocogoose.otf);
+}
+
 .display {
 	height: auto;
 	width: 	1735px;
@@ -8,4 +13,9 @@
 
 	background: rgb(0,0,0);
 	color: white;
+}
+
+h2{
+	margin: 0.5em;
+	font-family: title, Calibri, sans-serif;
 }

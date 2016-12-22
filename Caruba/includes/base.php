@@ -33,8 +33,8 @@
 	<div class="search">
 		<!-- SEARCH &nbsp; -->
 		<form action="search-results.php" method="POST">
-			<input type="text" name="query" value=" Search" onfocus="if (this.value==' Search') this.value='';"/>
-			<input type="submit"/>
+			<input type="text" name="query" value=" " onfocus="if (this.value==' ') this.value='';"/>
+			<input type="submit" value="Search"/>
 		</form>
 	</div>
 </div>

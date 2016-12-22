@@ -15,7 +15,7 @@
     <!-- Get that Bootstrap included -->
     <link href="bootstrap3_defaultTheme/dist/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap3_defaultTheme/theme.css" rel="stylesheet">
-
+    <link href="results-styling.css" rel="stylesheet">
 
   </head>
 
@@ -23,7 +23,7 @@
   	<?php
     include 'includes/base.php';
     ?>
-    <div class="display">
+    <div class="display container-fluid">
         <?php
         $search_query ="";
         if (isset($_POST["query"])){
@@ -37,7 +37,7 @@
         }
         $videos = getVideosFromQuery($search_query);
         if (empty($videos))
-            echo "<p>no search results found</p>";
+            echo "<h2>No videos yet. Maybe it's time to make your own!</h2>";
         else
             generateVideoWell($videos);
         ?>

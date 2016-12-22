@@ -1,11 +1,20 @@
-/*.display {*/
-	/*height: 770px;*/
-	/*width: 	1735px;*/
+@font-face {
+    font-family: general;
+    src: url(fonts/cocogoose.otf);
+}
+h2{
+    font-family: general, Calibri, sans-serif;
+}
+img.featured{
+    margin-top: 3%;
+    margin-left: 38%;
+    width: 32em;
+    height: 22em;
+}
+.homepage-img{
 
-	/*position: absolute;*/
-	/*top: 120px;*/
-	/*left: 120px; right: 60px; right: 0; bottom: 0;*/
+}
 
-	/*background: rgb(0,0,0);*/
-	/*color: white;*/
-/*}*/
+.left-p{
+    margin-left: 8%;
+}

@@ -21,18 +21,21 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+    min-height: 100%;
+    margin: 0;
 }
 
 body {
-	position: absolute;
+	position: fixed;
 	top:	0;
 	right:	0;
 	bottom:	0;
 	left:	0;
 	margin:	0;
-	
-	background: rgba(0,40,50,0.7) center top no-repeat;
-	background-size: 100%;
+
+    min-height: 100%;
+	background: rgba(0,40,50,0.3) center top no-repeat;
+	background-size: cover;
 
 }
 

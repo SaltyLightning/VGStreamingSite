@@ -11,19 +11,36 @@ include_once "/../Classes/User.php";
 include_once "/../Classes/Game.php";
 
 
-function generateVideoWell(array $videos){
-    echo '<div class="row video-well">';
+function getFeaturedVideo(){
+    $videoID = rand(7,12);
+    $featuredVideo = new Video($videoID);
+    return $featuredVideo;
+}
 
+function generateVideoWell(array $videos, $ignore = false, $count = false){
+    echo '<div class="row video-well">';
+    $it = 0;
     foreach ($videos as $video){
+        if ($count != false)
+        {
+            if ($it == $count)
+                break;
+        }
+        if ($ignore != false)
+        {
+            if ($video->getVideoID() == $ignore)
+                continue;
+        }
         echo '<div class="col-md-1 video-tiny">';
         echo '<div class="" >';
 //        echo '<img src="Images/Thumbnails/.png" />';
-        echo sprintf('<a href="viewer.php?video=%s"><img src="images/Thumbnails/%s.png" title = "%s" class="v-thumb"/></a>', $video->getVideoID(), $video->getThumbnail(), $video->getTitle());
+        echo sprintf('<a href="viewer.php?video=%s"><img src="images/Thumbnails/%s" title = "%s" class="v-thumb"/></a>', $video->getVideoID(), $video->getThumbnail(), $video->getTitle());
         echo '</div>';
         echo '<div class="caption" >';
         echo '<p><a href="viewer.php?video=' . $video->getVideoID() .  '">' . $video->getTitle() . '</a><br/>';
         echo ' by <a href="search-results.php?query=' . $video->getUploader() . '">'. $video->getUploader() . '</a></p>';
         echo '</div></div>';
+        $it++;
     }
     echo '</div>';
 }
@@ -34,7 +51,7 @@ function generateGameWell(){
     foreach ($games as $game){
         echo '<div class="col-md-3 game-tiny">';
         echo '<div class="" >';
-        echo sprintf('<img src="images/Thumbnails/%s" title = "%s" class="g-thumb"/>', $game->getThumbnail(), $game->getThumbnail());
+        echo sprintf('<a href="search-results.php?query=%s"><img src="images/Thumbnails/%s" title = "%s" class="g-thumb"/></a>', $game->getGameTitle(),  $game->getThumbnail(), $game->getThumbnail());
         echo '</div>';
         echo '<div class="caption" >';
         echo '<p><a href="search-results.php?query=' . $game->getGameTitle() . '">'. $game->getGameTitle() . '</a></p>';

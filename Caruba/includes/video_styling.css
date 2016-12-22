@@ -28,6 +28,14 @@ div.game-tiny{
     padding-top: 0.5em;
 }
 
+.game-tiny a:link, .game-tiny a:visited{
+    color: white;
+}
+
+.game-tiny a:hover{
+    text-decoration: none;
+}
+
 div.video-well{
     margin: 2em;
 }
@@ -41,7 +49,7 @@ img.v-thumb{
 
 img.g-thumb{
     width: 100%;
-    height: 60%;
+    height: 20em;
 }
 
 .caption{
